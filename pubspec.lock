@@ -308,10 +308,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_ios
-      sha256: f3285238eb1474ee42946f557ad7df17aa6a2cf4106c2f41bdc948cd71c8b5e5
+      sha256: "4824d8c7f6f89121ef0122ff79bb00b009607faecc8545b86bca9ab5ce1e95bf"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.11+1"
+    version: "0.8.11+2"
   image_picker_linux:
     dependency: transitive
     description:
@@ -400,8 +400,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.0"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   mime:
     dependency: transitive
     description:
@@ -410,10 +408,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> master
   path:
     dependency: transitive
     description:
@@ -499,8 +493,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   typed_data:
     dependency: transitive
     description:
@@ -517,10 +509,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.4.0"
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> master
   vector_math:
     dependency: transitive
     description:
@@ -537,8 +525,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.2.1"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
   web:
     dependency: transitive
     description:
@@ -558,13 +544,3 @@ packages:
 sdks:
   dart: ">=3.4.0 <4.0.0"
   flutter: ">=3.19.0"
-=======
-sdks:
-  dart: ">=3.3.3 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
->>>>>>> Stashed changes
-=======
-sdks:
-  dart: ">=3.3.3 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
->>>>>>> master
