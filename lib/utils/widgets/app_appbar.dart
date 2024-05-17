@@ -25,34 +25,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: const CircleAvatar(
-          radius: 25,
-          child: Text('Logo'),
-        ),
+      leading: const CircleAvatar(
+        radius: 30,
+        child: Text('Logo'),
       ),
       actions: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Icon(
-                Icons.notification_important,
-                size: 4.h,
-              ),
-              SizedBox(
-                width: 3.w,
-              ),
-              Icon(
-                Icons.person,
-                size: 4.h,
-              ),
-            ],
-          ),
+        Row(
+          children: [
+            Icon(
+              Icons.notification_important,
+              size: 4.5.h,
+            ),
+            SizedBox(
+              width: 3.w,
+            ),
+            Icon(
+              Icons.person,
+              size: 4.5.h,
+            ),
+          ],
         )
       ],
-      backgroundColor: backgroundcolor,
+      backgroundColor: Colors.orange,
       centerTitle: true,
     );
   }

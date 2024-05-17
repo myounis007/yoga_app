@@ -49,7 +49,7 @@ class _GenderSelectionState extends State<GenderSelection> {
             ),
             Container(
               padding: const EdgeInsets.all(15),
-              height: 9.h,
+              height: 10.h,
               width: 35.h,
               decoration: BoxDecoration(
                   color: const Color(0xffEDEDED),

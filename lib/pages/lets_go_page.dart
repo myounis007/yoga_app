@@ -4,15 +4,10 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:yoga_app/utils/widgets/app_button.dart';
 import 'package:yoga_app/utils/widgets/app_subheading.dart';
 
-class LetsGoPage extends StatefulWidget {
-  const LetsGoPage({super.key});
+class LetsGoPage extends StatelessWidget {
+  // ignore: use_super_parameters
+  const LetsGoPage({Key? key}) : super(key: key);
 
-  @override
-  State<LetsGoPage> createState() => _LetsGoPageState();
-}
-
-class _LetsGoPageState extends State<LetsGoPage> {
-  String? selectedGender;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
