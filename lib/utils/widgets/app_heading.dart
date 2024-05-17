@@ -5,12 +5,13 @@ class AppHeading extends StatelessWidget {
   final Color? colors;
   final double size;
   final FontWeight? fontWeight;
+  final TextSpan? text2;
   const AppHeading(
       {super.key,
       this.text,
       this.fontWeight,
       this.colors = Colors.black,
-      this.size = 28});
+      this.size = 28, this.text2});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,8 @@ class AppHeading extends StatelessWidget {
         fontSize: size,
         fontWeight: fontWeight,
         color: colors,
+        
+        
       ),
     );
   }
