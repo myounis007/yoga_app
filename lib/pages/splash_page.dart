@@ -61,7 +61,7 @@ class SplashPage extends StatelessWidget {
               width: 21.3.h,
               text: 'GET STARTED',
               onPressed: () {
-                Navigator.pushNamed(context, '/login2');
+                Navigator.pushNamed(context, '/SignUp3');
               })
         ],
       ),

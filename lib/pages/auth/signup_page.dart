@@ -83,6 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     if (formKey.currentState!.validate()) {
                       AuthService().registerUser(
                           _emailController.text, _passwordController.text);
+                      Navigator.pushNamed(context, '/Gender');
                     }
                   },
                 ),

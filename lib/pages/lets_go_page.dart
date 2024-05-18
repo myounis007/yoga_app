@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'package:yoga_app/utils/widgets/app_button.dart';
 import 'package:yoga_app/utils/widgets/app_subheading.dart';
 
 class LetsGoPage extends StatelessWidget {
-  // ignore: use_super_parameters
   const LetsGoPage({Key? key}) : super(key: key);
 
   @override
@@ -31,19 +29,13 @@ class LetsGoPage extends StatelessWidget {
             )
           ],
         ),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            appButton(
-              height: 4.5.h,
-              width: 14.h,
-              text: "Let's Go",
-              onPressed: () {
-                Navigator.pushNamed(context, '/ManHome');
-              },
-            ),
-          ],
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/bottombarandhome');
+          },
+          child: const Text("Let's Go"),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }

@@ -1,26 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:yoga_app/pages/user_name.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:yoga_app/firebase_options.dart';
-<<<<<<< HEAD
-// import 'package:yoga_app/pages/app_gender.dart';
-// import 'package:yoga_app/pages/auth/login_page.dart';
-// import 'package:yoga_app/pages/auth/signup_page.dart';
 import 'package:yoga_app/pages/bottom_bar_page/man_home_page.dart';
-// import 'package:yoga_app/pages/lets_go_page.dart';
-// import 'package:yoga_app/pages/men_aim_page.dart';
-// import 'package:yoga_app/pages/splash_page.dart';
-// import 'package:yoga_app/pages/user_name.dart';
-=======
-import 'package:yoga_app/pages/lets_go_page.dart';
+
 import 'package:yoga_app/pages/app_gender.dart';
 import 'package:yoga_app/pages/auth/login_page.dart';
 import 'package:yoga_app/pages/auth/signup_page.dart';
-import 'package:yoga_app/pages/bottom_bar_page/man_home_page.dart';
+import 'package:yoga_app/pages/lets_go_page.dart';
 import 'package:yoga_app/pages/men_aim_page.dart';
 import 'package:yoga_app/pages/splash_page.dart';
-import 'package:yoga_app/pages/user_name.dart';
->>>>>>> 6c78c2dc997c7ea6a015563445ab3ec77e52a098
+import 'package:yoga_app/pages/workout_detail_page/work_out_detail.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,14 +34,15 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const ManHomePages(),
-          // '/login2': (context) => const LoginPage(),
-          // '/SignUp3': (context) => const SignUpPage(),
-          // '/Gender': (context) => const GenderSelection(),
-          // '/ManAim': (context) => const MenAimPage(),
-          // '/Username': (context) => const UserName(),
-          // '/LetsGo': (context) => const LetsGoPage(),
-          // '/ManHome': (context) => const ManHomePages(),
+          '/': (context) => const SplashPage(),
+          '/login2': (context) => const LoginPage(),
+          '/SignUp3': (context) => const SignUpPage(),
+          '/Gender': (context) => const GenderSelection(),
+          '/ManAim': (context) => const MenAimPage(),
+          '/Username': (context) => const UserName(),
+          '/LetsGo': (context) => const LetsGoPage(),
+          '/bottombarandhome': (context) => const HomeAndBottomBar(),
+          '/workout':(context)=>const WorkOutDetails(),
         },
       ),
     );
