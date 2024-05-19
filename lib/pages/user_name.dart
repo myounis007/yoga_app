@@ -112,7 +112,9 @@ class _UserNameState extends State<UserName> {
                 )
               ],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           const SizedBox(width: 16),
           appButton(

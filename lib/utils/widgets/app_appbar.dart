@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:yoga_app/pages/profile_page.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -25,28 +26,34 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const CircleAvatar(
-        radius: 30,
-        child: Text('Logo'),
+      leading: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: CircleAvatar(
+          radius: 30,
+          child: Text('Logo'),
+        ),
       ),
       actions: [
         Row(
           children: [
-            Icon(
-              Icons.notification_important,
-              size: 4.5.h,
+            const Icon(
+              Icons.history,
             ),
             SizedBox(
               width: 3.w,
             ),
-            Icon(
-              Icons.person,
-              size: 4.5.h,
-            ),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return ProfilePage();
+                    },
+                  ));
+                },
+                icon: const Icon(Icons.person))
           ],
         )
       ],
-      backgroundColor: Colors.orange,
       centerTitle: true,
     );
   }

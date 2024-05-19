@@ -41,21 +41,15 @@ class FirebaseService {
     }
   }
 
-  // Future<String> uploadVideo(File videoFile) async {
-  //   try {
-  //     String fileName =
-  //         DateTime.now().millisecondsSinceEpoch.toString(); // Unique file name
-  //     TaskSnapshot snapshot =
-  //         await _storage.ref('videos/$fileName').putFile(videoFile);
-  //     if (snapshot.state == TaskState.success) {
-  //       final String downloadUrl = await snapshot.ref.getDownloadURL();
-  //       return downloadUrl;
-  //     } else {
-  //       throw 'Failed to upload video';
-  //     }
-  //   } catch (e) {
-  //     print('Error uploading video: $e');
-  //     throw e; // Rethrow the error to handle it in the calling function
-  //   }
-  // }
+  Future<List<Exercise>> getExercises() async {
+    try {
+      QuerySnapshot snapshot = await _firestore.collection('exercises').get();
+      return snapshot.docs
+          .map((doc) => Exercise.fromJson(doc.data() as Map<String, dynamic>))
+          .toList();
+    } catch (e) {
+      print('Error fetching exercises: $e');
+      throw Exception('Failed to fetch exercises');
+    }
+  }
 }

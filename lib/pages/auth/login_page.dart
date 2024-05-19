@@ -30,87 +30,100 @@ class _LoginPageState extends State<LoginPage> {
           margin: EdgeInsets.only(top: 5.h),
           child: Form(
             key: formKey,
-            child: Column(
-              children: [
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: AppHeading(
-                    text: 'Welcome',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: AppSubHeading(
-                    text: 'Sign in to Continue',
-                  ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                TextField(
-                  controller: _emailController,
-                  decoration:
-                      const InputDecoration(label: Text('Enter your email')),
-                ),
-                SizedBox(
-                  height: 2.7.h,
-                ),
-                TextField(
-                  controller: _passwordController,
-                  decoration:
-                      const InputDecoration(label: Text('Enter your password')),
-                ),
-                SizedBox(
-                  height: 1.8.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    InkWell(
-                      child: const AppSubHeading(
-                        text: 'Forgot Password?',
-                      ),
-                      onTap: () {},
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                appButton(
-                    height: 5.h,
-                    text: 'Login',
-                    borderradius: BorderRadius.circular(0.h),
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        AuthService().login(
-                            _emailController.text, _passwordController.text);
-                      }
-                    }),
-                SizedBox(
-                  height: 30.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const AppSubHeading(
-                      text: "Don't have an account? ",
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: AppHeading(
+                      text: 'Welcome',
+                      fontWeight: FontWeight.bold,
                     ),
-                    InkWell(
-                      child: const AppSubHeading(
-                        text: ' SignUp',
-                      ),
-                      onTap: () {
-                        Navigator.pushNamed(context, '/SignUp3');
-                      },
+                  ),
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  const Align(
+                    alignment: Alignment.topLeft,
+                    child: AppSubHeading(
+                      text: 'Sign in to Continue',
                     ),
-                  ],
-                )
-              ],
+                  ),
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                  TextField(
+                    controller: _emailController,
+                    decoration:
+                        const InputDecoration(label: Text('Enter your email')),
+                  ),
+                  SizedBox(
+                    height: 2.7.h,
+                  ),
+                  TextField(
+                    controller: _passwordController,
+                    decoration: const InputDecoration(
+                        label: Text('Enter your password')),
+                  ),
+                  SizedBox(
+                    height: 1.8.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      InkWell(
+                        child: const AppSubHeading(
+                          text: 'Forgot Password?',
+                        ),
+                        onTap: () {},
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                  appButton(
+                      height: 5.h,
+                      text: 'Login',
+                      borderradius: BorderRadius.circular(0.h),
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          AuthService()
+                              .login(_emailController.text,
+                                  _passwordController.text)
+                              .then(
+                            (value) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Login successfull')));
+
+                              Navigator.pushNamed(context, '/Gender');
+                            },
+                          );
+                          ;
+                        }
+                      }),
+                  SizedBox(
+                    height: 30.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const AppSubHeading(
+                        text: "Don't have an account? ",
+                      ),
+                      InkWell(
+                        child: const AppSubHeading(
+                          text: ' SignUp',
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/SignUp');
+                        },
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

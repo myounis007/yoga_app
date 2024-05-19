@@ -113,7 +113,9 @@ class _MenAimPageState extends State<MenAimPage> {
                 )
               ],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           const SizedBox(width: 16),
           appButton(

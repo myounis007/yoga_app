@@ -4,7 +4,8 @@ import 'package:yoga_app/utils/widgets/app_heading.dart';
 
 class WorkoutContainerWidget extends StatelessWidget {
   final String? text;
-  const WorkoutContainerWidget({super.key, this.text});
+  final String imageUrl;
+  const WorkoutContainerWidget({super.key, this.text, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +13,11 @@ class WorkoutContainerWidget extends StatelessWidget {
       margin: EdgeInsets.only(left: 2.w, right: 2.w),
       height: 30.h,
       width: double.infinity,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/female.png'),
+          image: NetworkImage(imageUrl),
         ),
       ),
       child: Padding(

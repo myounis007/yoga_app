@@ -7,7 +7,7 @@ class Exercise {
   final String exerciseName;
   final String exerciseLength;
   final String exerciseDescription;
-  final int kacl;
+  final String kacl;
   final String? imageUrl;
   final String? videoUrl;
 

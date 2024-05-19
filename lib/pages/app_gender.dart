@@ -20,94 +20,97 @@ class _GenderSelectionState extends State<GenderSelection> {
         child: Scaffold(
       body: Container(
         margin: EdgeInsets.only(top: 15.h),
-        child: Column(
-          children: [
-            Center(
-              child: RichText(
-                text: const TextSpan(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Center(
+                child: RichText(
+                  text: const TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Choose your ',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: 'Gender',
+                        style: TextStyle(
+                            color: Color(0xffC91471),
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Container(
+                padding: const EdgeInsets.all(15),
+                height: 10.h,
+                width: 35.h,
+                decoration: BoxDecoration(
+                    color: const Color(0xffEDEDED),
+                    borderRadius: BorderRadius.circular(1.h)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    TextSpan(
-                      text: 'Choose your ',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    TextSpan(
-                      text: 'Gender',
-                      style: TextStyle(
-                          color: Color(0xffC91471),
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold),
+                    Image.asset("assets/images/Vector.png"),
+                    const AppSubHeading(
+                      text:
+                          'It help to calculate your\n Metabolic Rate and Plan',
                     )
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 5.h,
-            ),
-            Container(
-              padding: const EdgeInsets.all(15),
-              height: 10.h,
-              width: 35.h,
-              decoration: BoxDecoration(
-                  color: const Color(0xffEDEDED),
-                  borderRadius: BorderRadius.circular(1.h)),
-              child: Row(
+              SizedBox(
+                height: 4.h,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset("assets/images/Vector.png"),
-                  const AppSubHeading(
-                    text: 'It help to calculate your\n Metabolic Rate and Plan',
-                  )
+                  Image.asset('assets/images/male.png'),
+                  Image.asset('assets/images/female.png'),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 4.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/images/male.png'),
-                Image.asset('assets/images/female.png'),
-              ],
-            ),
-            SizedBox(
-              height: 90,
-              width: 300,
-              child: Row(
-                children: [
-                  Radio(
-                    value: 'male',
-                    groupValue: selectedGender,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedGender = value;
-                      });
-                    },
-                  ),
-                  const AppSubHeading(text: 'Male'),
-                  const SizedBox(
-                    width: 90,
-                  ),
-                  Radio(
-                    value: 'female',
-                    groupValue: selectedGender,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedGender = value;
-                      });
-                    },
-                  ),
-                  const AppSubHeading(
-                    text: 'Female',
-                  ),
-                ],
-              ),
-            )
-          ],
+              SizedBox(
+                height: 90,
+                width: 300,
+                child: Row(
+                  children: [
+                    Radio(
+                      value: 'male',
+                      groupValue: selectedGender,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedGender = value;
+                        });
+                      },
+                    ),
+                    const AppSubHeading(text: 'Male'),
+                    const SizedBox(
+                      width: 90,
+                    ),
+                    Radio(
+                      value: 'female',
+                      groupValue: selectedGender,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedGender = value;
+                        });
+                      },
+                    ),
+                    const AppSubHeading(
+                      text: 'Female',
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
       floatingActionButton: Row(
@@ -132,7 +135,9 @@ class _GenderSelectionState extends State<GenderSelection> {
                 )
               ],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           const SizedBox(width: 16),
           appButton(

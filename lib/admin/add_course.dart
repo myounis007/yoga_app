@@ -51,14 +51,14 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
       try {
         final exercise = Exercise(
           id: uuid.v4(),
-          gender: _selectedGender ?? 'Male',
+          gender: _selectedGender!,
           courseName: _exercisetitleController.text,
           isBodyShaping: _isBodyShaping,
-          dayName: _selectedDay ?? 'Monday',
+          dayName: _selectedDay!,
           exerciseName: _exerciseNameController.text.trim(),
           exerciseLength: _exerciseLengthController.text.trim(),
           exerciseDescription: _exerciseDescriptionController.text.trim(),
-          kacl: int.parse(_kaclController.text),
+          kacl: _kaclController.text,
           imageUrl: await _firebaseService.uploadImage(_imageBytes),
           videoUrl: _exerciseVideoController.text,
         );
@@ -224,16 +224,9 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
                         _imageBytes!,
                         height: 200,
                         width: 200,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.contain,
                       )
                     : const SizedBox(),
-                // ElevatedButton(
-                //   onPressed: _pickVideo,
-                //   child: const Text('Select Video'),
-                // ),
-                // _videoFile != null
-                //     ? Text('Video selected: ${_videoFile!.path}')
-                //     : const SizedBox(),
                 const SizedBox(
                   height: 10,
                 ),
@@ -243,7 +236,7 @@ class _AddExerciseScreenState extends State<AddExerciseScreen> {
                       const InputDecoration(labelText: 'Add video link'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter video link';
+                      return 'Please enter video id';
                     }
                     return null;
                   },
